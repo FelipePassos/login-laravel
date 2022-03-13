@@ -7,6 +7,13 @@ use App\Models\UserLogin;
 
 class LoginController extends Controller
 {
+    public  function index()
+    {
+        $usersData = UserLogin::query()->orderBy('nome')->get();
+
+        return view('visualizar', ['usersData' => $usersData]);
+    }
+
     public function printView() {
         return view('welcome',['nome' => 'joao']);
     }
@@ -30,6 +37,6 @@ class LoginController extends Controller
             'senha' => $request->senha,
         ]);
 
-        return view('dados', ['dados' => $dados]);
+        return redirect('/visualizar');
     }
 }
