@@ -15,4 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'LoginController@printView');
 Route::post('/dados', 'LoginController@store');
+<<<<<<< HEAD
 Route::get('/visualizar', 'LoginController@index');
+=======
+Route::get('/visualizar', 'LerDados@index');
+>>>>>>> ecbfe525ff2f07f767256973df5318692474c7f6
